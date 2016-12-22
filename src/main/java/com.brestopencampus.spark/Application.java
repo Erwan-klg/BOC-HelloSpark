@@ -55,12 +55,12 @@ public class Application {
   }
 
   private static DB mongo() throws Exception {
-    String host = "127.0.0.1";//System.getenv("MONGODB_DB_HOST");
+    String host = System.getenv("MONGODB_ADDON_HOST");
     if (host == null) {
       MongoClient mongoClient = new MongoClient("localhost");
       return mongoClient.getDB("todoapp");
     }
-    int port = 27017;//Integer.parseInt(System.getenv("MONGODB_DB_PORT"));
+    int port = Integer.parseInt(System.getenv("MONGODB_ADDON_PORT"));
     String dbname = System.getenv("MONGODB_ADDON_DB");
     String username = System.getenv("MONGODB_DB_USERNAME");
     String password = System.getenv("MONGODB_DB_PASSWORD");
