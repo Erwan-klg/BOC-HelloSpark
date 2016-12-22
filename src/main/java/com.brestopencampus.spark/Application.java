@@ -56,10 +56,6 @@ public class Application {
 
   private static DB mongo() throws Exception {
     String host = System.getenv("MONGODB_ADDON_HOST");
-    if (host == null) {
-      MongoClient mongoClient = new MongoClient("localhost");
-      return mongoClient.getDB("todoapp");
-    }
     int port = Integer.parseInt(System.getenv("MONGODB_ADDON_PORT"));
     String dbname = System.getenv("MONGODB_ADDON_DB");
     String username = System.getenv("MONGODB_ADDON_USERNAME");
